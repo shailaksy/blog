@@ -1,0 +1,12 @@
+div {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+}
+
+img {
+    width: 50%;
+    margin: auto;
+    display: block;
+}
+

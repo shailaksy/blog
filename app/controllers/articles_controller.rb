@@ -12,10 +12,14 @@ class ArticlesController < ApplicationController
         @article.name = params[:name]
         @article.body = params[:body]
 
-        if @article.save
-            redirect_to articles_path
-        else
-            render :new
+        respond_to do |format|
+            if @article.save
+                format.html { redirect_to entry_url(@article), notice: "Article was successfully created." }
+                format.json { render :show, status: :created, location: @article }
+            else
+                format.html { render :new, status: :unprocessable_entity }
+                format.json { render json: @article.errors, status: :unprocessable_entity }
+            end
         end
     end
 
@@ -23,9 +27,25 @@ class ArticlesController < ApplicationController
     end
     
     def update
+        respond_to do |format|
+          if @article.update(article_params)
+            format.html { redirect_to entry_url(@article), notice: "Article was successfully updated." }
+            format.json { render :show, status: :ok, location: @article }
+          else
+            format.html { render :edit, status: :unprocessable_entity }
+            format.json { render json: @article.errors, status: :unprocessable_entity }
+          end
+        end
     end
     
-    def delete
+    
+    def destroy
+        @article.destroy
+    
+        respond_to do |format|
+          format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
+          format.json { head :no_content }
+        end
     end
 
     private

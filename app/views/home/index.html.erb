@@ -1,3 +1,27 @@
-<div>
-<img src="<%= image_path 'lily.jpeg' %>" /> 
-</div>
+<section>
+
+    <%= render "nav" %>
+
+    <div id='container'>
+        <span id='date'> </span>
+        <hr>
+        <h1>Welcome to my blog!</h1>
+        
+        <div class="entries">
+        <% @entries.each do |entry| %>
+        <div class='entry'>
+          <%= render "entry",entry:entry %>
+          <p>
+            <%= link_to "Show this entry", entry %>
+          </p>
+        </div>
+        <% end %>
+      </div>
+      
+      
+      <%= link_to "New entry", new_entry_path %>
+      
+
+    </div>
+
+</section>

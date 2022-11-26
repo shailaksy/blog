@@ -1,2 +1,14 @@
-<h1>Entries#edit</h1>
-<p>Find me in app/views/entries/edit.html.erb</p>
+<section>
+<%= render "nav" %>
+<div class='container'>
+<h2>Edit entry</h2>
+<%= render "form", entry: @entry %>
+
+<br>
+
+<div>
+  <%= link_to "Show this entry", @entry %> |
+  <%= link_to "Back to entries", home_path %>
+</div>
+</div>
+</section>

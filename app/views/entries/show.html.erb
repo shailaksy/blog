@@ -1,2 +1,13 @@
-<h1>Entries#show</h1>
-<p>Find me in app/views/entries/show.html.erb</p>
+<%= render "nav" %>
+<p style="color: green"><%= notice %></p>
+<section>
+<div class='container'>
+<%= render @entry %>
+
+<div class='edit-entry'>
+  <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
+  <%= link_to "Back to entries", home_path %> |
+  <%= button_to "Destroy this entry", @entry, method: :delete %>
+</div>
+</div>
+</section>

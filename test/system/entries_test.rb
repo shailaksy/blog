@@ -14,9 +14,6 @@ class EntriesTest < ApplicationSystemTestCase
     visit entries_url
     click_on "New entry"
 
-    fill_in "Author", with: @entry.author
-    fill_in "Body", with: @entry.body
-    fill_in "Title", with: @entry.title
     click_on "Create Entry"
 
     assert_text "Entry was successfully created"
@@ -27,9 +24,6 @@ class EntriesTest < ApplicationSystemTestCase
     visit entry_url(@entry)
     click_on "Edit this entry", match: :first
 
-    fill_in "Author", with: @entry.author
-    fill_in "Body", with: @entry.body
-    fill_in "Title", with: @entry.title
     click_on "Update Entry"
 
     assert_text "Entry was successfully updated"

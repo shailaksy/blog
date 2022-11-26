@@ -1,0 +1,33 @@
+form > div {
+    padding: 0.65rem 0;
+}
+
+#entry_title, 
+#entry_author,
+#entry_body {
+    margin: 0.35rem 0;
+    padding: 0.15rem 0.35rem;
+}
+
+#entry_title, 
+#entry_author {
+    width: 45%;
+}
+
+#entry_body {
+    width: 100%;
+    height: 70px;
+    text-align: left;
+    resize: none;
+}
+
+input[type=submit] {
+    padding: 0.5rem 0.8rem;
+    background-color: rgb(1, 52, 103);
+    color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}

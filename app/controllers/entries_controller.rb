@@ -65,6 +65,6 @@ class EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.fetch(:entry, {})
+      params.require(:entry).permit(:title, :author, :body, :published)
     end
 end
